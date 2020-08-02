@@ -1,56 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:goals_dash/Src/style.dart';
 import 'package:goals_dash/Src/today.dart';
+import 'package:goals_dash/Src/todayMobil.dart';
 
-class NavBar extends StatelessWidget {
+
+class NavBar extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context,constraints ){
-        //Desktop
-        if(constraints.maxWidth>1200){
-          return DesktopNavBar();
-        }
-        //Tablets
-        else if (constraints.maxWidth> 800 && constraints.maxWidth<1200){
-          return DesktopNavBar();
-        }
-        // else if (contraints.maxWideth> 800 && contraints.maxWidth<1200){
-        //   DesktopNavBar();
-        // }
-        //Mobile phone
-        else{
-          return MobileNavBar();
-        }
-
-      },
-    );
-  }
+  _NavBarState createState() => _NavBarState();
 }
 
-class DesktopNavBar extends StatefulWidget {
-  @override
-  _DesktopNavBarState createState() => _DesktopNavBarState();
-}
-
-class _DesktopNavBarState extends State<DesktopNavBar> {
+class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
         length: 3, 
         initialIndex: 1,
         child: Container(
-          
           child: Scaffold(
                   appBar: CustomAppBar(
                     height: 110,
                   ),
-                body: TabBarView(
-                  children: [
-                    Icon(Icons.access_alarm),
-                    Today(),
-                    Icon(Icons.cached),
-                ],),
+                body: LayoutBuilder(
+                  builder:(context, constin ){
+                      if(constin.maxWidth >= 480){
+                     return  TabBarView(
+                        children: [
+                          Icon(Icons.account_box, size: 60 ),
+                          Today(),
+                          Icon(Icons.hot_tub, size: 60),
+                        ] 
+                      );
+                      
+                    }
+                    else{
+                      print("phone mode");
+                        return TabBarView(
+                        children: [
+                          Icon(Icons.account_box, size: 60 ),
+                          TodayMobile(),
+                          Icon(Icons.hot_tub, size: 60),
+                        ] 
+                      );
+                      }
+                     
+                    
+                    
+                  }
+
+                )
+
           ),
         ),
         );
@@ -66,7 +64,32 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({Key key, this.height}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return LayoutBuilder(   
+      builder: (context, constrints){
+
+        // Calculates the constraints of the app bar width
+        double appbarWidth(BoxConstraints constraints){
+
+          if(constraints.maxWidth>1200){
+            print("its a desktop mode");
+            return 0.45;
+          }
+          else if( constraints.maxWidth > 768 && constraints.maxWidth<1200 ){
+            print("its a tablet mode");
+            return 0.5;
+          }else if ( constraints.maxWidth > 495 && constraints.maxWidth < 768  ){
+            print("it's close to moblie mode tablet");
+            return 0.68;
+          }
+          else if ( constraints.maxWidth > 319 && constraints.maxWidth < 440  ){
+            print("it's moblie mode ");
+            return 0.96;
+          }
+
+          return 0.46;
+          
+        }
+        return Material(
          elevation: 9,
           child: Container(
         color: bodybg,
@@ -79,19 +102,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Row(
                 mainAxisAlignment:MainAxisAlignment.center,
                 children: [
-                  Image.asset("images/football.png",
+                  Image.asset("images/ball-logo.png",
                   width: 50,
                   height: 50,
                   ),
                   SizedBox(
                     width: 20,
                   ),
-                  Text("BallDash", style: header2, ),
+                  Text("Scoreline", style: header2, ),
                 ],
               ),
             ),
             Container(
-              width: MediaQuery.of(context).size.width*0.45,
+              width: MediaQuery.of(context).size.width* appbarWidth(constrints),
               color: tabSec,
               child: Row(
                 children: [
@@ -113,7 +136,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 tabs: [
                   Tab(
                     child: Center(
-                      child: Text("Tommorrow",
+                      child: Text("Yestarday",
                       style: tabs, 
                       softWrap: false,
                       overflow: TextOverflow.ellipsis,
@@ -127,7 +150,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   Tab(
                     child: Center(
-                      child: Text("Yestarday",
+                      child: Text("Tomorrow",
                       softWrap: false,
                       overflow: TextOverflow.ellipsis,
                       style: tabs,
@@ -144,6 +167,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
     );
+      },
+    );
 
     
   }
@@ -152,17 +177,3 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     Size get preferredSize => Size.fromHeight(height);
 }
 
-
-class MobileNavBar extends StatefulWidget {
-  @override
-  _MobileNavBarState createState() => _MobileNavBarState();
-}
-
-class _MobileNavBarState extends State<MobileNavBar> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
-    );
-  }
-}

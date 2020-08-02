@@ -184,7 +184,7 @@ class _ExpansionTileState extends State<ExpansionTiles> with SingleTickerProvide
               subtitle: widget.subtitle,
               trailing: widget.trailing ?? RotationTransition(
                 turns: _iconTurns,
-                child: const Icon(Icons.expand_more, size:32,),
+                child: const Icon(Icons.expand_more, size:28,),
               ),
             ),
           ),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 TextStyle header2 =  TextStyle(
@@ -23,11 +22,19 @@ color: pink
 );
 
 TextStyle header4 =  TextStyle(
-fontSize: 22,
+fontSize: 20,
 //fontFamily: "Montserrat",
-fontWeight: FontWeight.w600,
+fontWeight: FontWeight.w500,
 color: whitee,
 );
+
+TextStyle header4mobile =  TextStyle(
+fontSize: 16,
+//fontFamily: "Montserrat",
+fontWeight: FontWeight.w500,
+color: whitee,
+);
+
 
 TextStyle scores =  TextStyle(
 fontSize: 20,
@@ -36,8 +43,22 @@ fontWeight: FontWeight.w700,
 color: bluewe,
 );
 
+TextStyle scoresMobile =  TextStyle(
+fontSize: 17,
+fontFamily: "Montserrat",
+fontWeight: FontWeight.w700,
+color: bluewe,
+);
+
 TextStyle rating =  TextStyle(
 fontSize: 12,
+fontFamily: "Montserrat",
+fontWeight: FontWeight.normal,
+color: whitee,
+);
+
+TextStyle ratingmobile =  TextStyle(
+fontSize: 11,
 fontFamily: "Montserrat",
 fontWeight: FontWeight.normal,
 color: whitee,
@@ -53,9 +74,27 @@ color: bluewe,
 TextStyle chips =  TextStyle(
 fontSize: 13,
 fontFamily: "Montserrat",
-fontWeight: FontWeight.normal,
+fontWeight: FontWeight.w600,
 color: bluewe,
 );
+
+
+
+TextStyle chipsmoblie =  TextStyle(
+fontSize: 11,
+fontFamily: "Montserrat",
+fontWeight: FontWeight.w500,
+color: bluewe,
+);
+
+TextStyle chipser (){
+  return TextStyle(
+fontSize: 13,
+fontFamily: "Montserrat",
+fontWeight: FontWeight.w600,
+color: bluewe,
+);
+}
 
 
 
