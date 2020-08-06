@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:goals_dash/Src/clubPage.dart';
+import 'package:provider/provider.dart';
 
 import 'leaguesPage.dart';
+import 'services/db.dart';
 
 class AdminPortal extends StatefulWidget {
   AdminPortal({Key key}) : super(key: key);
@@ -15,7 +18,7 @@ class _AdminPortalState extends State<AdminPortal> {
     return Container(
        child: Center(
          child: ButtonBar(
-         
+         alignment: MainAxisAlignment.center,
            children: [
              FlatButton(
                color: Colors.indigo,
@@ -29,9 +32,11 @@ class _AdminPortalState extends State<AdminPortal> {
              FlatButton(
                color: Colors.indigo,
                onPressed: (){
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => LeaguesPage() ));
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => ClubsPage() ));
+                final  data = Provider.of<Db>(context, listen:false );
+                data.leagueList();
              }, child: Text(
-               "another"
+               "Clubs"
              ),
              ),
            ],

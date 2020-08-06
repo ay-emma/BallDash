@@ -15,6 +15,8 @@ class Club {
       league = map["league"],
       image = map["image"];
 
+    
+
   Club.fromSnapshot(DocumentSnapshot snapshot )
-      : this.fromMap(snapshot.data, reference: snapshot.reference);    
+   : this.fromMap(snapshot.data, reference: snapshot.reference);    
 }

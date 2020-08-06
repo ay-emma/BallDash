@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:goals_dash/Src/models/leagues.dart';
 
 class LeaguesPage extends StatefulWidget {
   @override
@@ -6,10 +8,73 @@ class LeaguesPage extends StatefulWidget {
 }
 
 class _LeaguesPageState extends State<LeaguesPage> {
+  TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Container(
-     child: Text("leagues Page")
+    return Scaffold(
+      appBar: AppBar( title: Text("Add/Update Leagues name"),),
+      body: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              alignment: Alignment.topCenter,
+              width: 300,
+              child: TextField(
+                controller: _controller,
+
+                decoration: InputDecoration(
+                  hintText: "Enter a new leaguess Name"
+                ),
+              ),
+            ),
+            FlatButton(
+              color: Colors.blueAccent,
+              onPressed: (){
+                Firestore.instance.collection("leagues").document("leagues").updateData(
+                {
+                 "leagues" : FieldValue.arrayUnion( [
+                    _controller.text
+                  ] )
+                }
+                  
+                  );
+              },
+               child: Text("Add league"),
+               ),
+            SizedBox( height: 15, ),
+           
+            StreamBuilder<DocumentSnapshot>(
+            stream: Firestore.instance.collection("leagues").document("leagues").snapshots(),
+            builder: (context,  snapshot) {
+              if(!snapshot.hasData){
+                return Container(
+                  // height: 90,
+                  // width: 90,
+                  child: CircularProgressIndicator()
+                );
+              }
+              return _leaguesList(context, snapshot.data );
+            }  ),
+          ],
+        ),
+     ),
     );
   }
+
+  Widget _leaguesList( context, DocumentSnapshot snapshot ) {
+    final data = League.fromSnapshot(snapshot);
+        return Expanded(
+                  child: FractionallySizedBox(
+                    heightFactor: 0.9,
+                    child: ListView.builder(
+            itemCount: data.league.length,
+            itemBuilder: (context, i){
+            return ListTile(
+              title: Text(data.league[i].toString()),
+            );
+          }),
+                  ),
+        );
+     }
 }
