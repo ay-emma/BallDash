@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:goals_dash/Src/widgets/toastbar.dart';
 import 'package:provider/provider.dart';
 
-import 'models/clubs.dart';
 import 'services/db.dart';
 
 class ClubsPage extends StatefulWidget {
@@ -22,9 +22,9 @@ class _ClubsPageState extends State<ClubsPage> {
 
   @override
   void didChangeDependencies() {
-    final  data = Provider.of<Db>(context);
+    final  data = Provider.of<Db>(context, listen: false );
     leaguedata = data.leaguenames;
-    print(leaguedata);
+    
     super.didChangeDependencies();
   }  
     
@@ -50,36 +50,41 @@ class _ClubsPageState extends State<ClubsPage> {
                         );
                       }).toList(),            
                        onChanged: (String value){
-                         setState(() {
+                        setState(() {
                            _chosenVal = value;
-                         });
+                        });
+                       
                        }
                        ),
                     _textField( _imgController, "Clubs image url"  ),  
                     SizedBox(
                       height: 10,
                     ),
-                    FlatButton(
-                      color: Colors.blue,
-                      splashColor: Colors.blueAccent,
-                      onPressed: (){
-                        final dbFunc = Provider.of<Db>(context, listen: false );
-                        dbFunc.clubsInsert( 
-                          name: _nameController.text,
-                          league: _chosenVal,
-                          image: _imgController.text,
-                           ).then({
-                             _nameController.clear(),
-                             _imgController.clear(),
-                           });
-                      },
-                    child: Text(" Add club ")) ,
+                    Builder(
+                      builder: (context) => FlatButton(
+                        color: Colors.blue,
+                        splashColor: Colors.blueAccent,
+                        onPressed: (){
+                          final dbFunc = Provider.of<Db>(context, listen: false );
+                          dbFunc.clubsInsert( 
+                            name: _nameController.text,
+                            league: _chosenVal,
+                            image: _imgController.text,
+                             ).then({
+                               _nameController.clear(),
+                               _imgController.clear(),
+                                showModalBottomSheet(
+                                 context: (context), 
+                                 builder: (context) => ToastBar(message: "Club has been added"  )
+                                 ),
+                             });
+                        },
+                      child: Text(" Add club "),),
+                    ) ,
 
                     SizedBox(
                       height: 15,
                     ),
-
-                   
                   ],
                 ),
               ),

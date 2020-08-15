@@ -3,6 +3,9 @@ import 'package:goals_dash/Src/style.dart';
 import 'package:goals_dash/Src/today.dart';
 import 'package:goals_dash/Src/todayMobil.dart';
 
+import '../tomorrowMobil.dart';
+import '../yestardayMobile.dart';
+
 
 class NavBar extends StatefulWidget {
   @override
@@ -27,7 +30,7 @@ class _NavBarState extends State<NavBar> {
                         children: [
                           Icon(Icons.account_box, size: 60 ),
                           Today(),
-                          Icon(Icons.hot_tub, size: 60),
+                          TomorrowMobile()  
                         ] 
                       );
                       
@@ -36,17 +39,13 @@ class _NavBarState extends State<NavBar> {
                       print("phone mode");
                         return TabBarView(
                         children: [
-                          Icon(Icons.account_box, size: 60 ),
+                          YerstadayMobile(),
                           TodayMobile(),
-                          Icon(Icons.hot_tub, size: 60),
+                          TomorrowMobile()  
                         ] 
                       );
                       }
-                     
-                    
-                    
                   }
-
                 )
 
           ),
@@ -102,10 +101,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Row(
                 mainAxisAlignment:MainAxisAlignment.center,
                 children: [
-                  Image.asset("images/ball-logo.png",
-                  width: 50,
-                  height: 50,
-                  ),
+                  FadeInImage.assetNetwork(
+                    placeholder: "images/football.png",
+                     image: "https://firebasestorage.googleapis.com/v0/b/scoreline-61b57.appspot.com/o/images%2Ficons8-football-kick-100%20(1).png?alt=media&token=556409d9-dc4e-4db2-824d-ce99bb0118ec",
+                      height: 25,
+                      width: 25,
+                     ),
                   SizedBox(
                     width: 20,
                   ),

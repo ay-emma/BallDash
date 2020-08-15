@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:goals_dash/Src/models/leagues.dart';
+import 'package:goals_dash/Src/widgets/toastbar.dart';
 
 class LeaguesPage extends StatefulWidget {
   @override
@@ -8,6 +9,7 @@ class LeaguesPage extends StatefulWidget {
 }
 
 class _LeaguesPageState extends State<LeaguesPage> {
+  
   TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -22,26 +24,35 @@ class _LeaguesPageState extends State<LeaguesPage> {
               width: 300,
               child: TextField(
                 controller: _controller,
-
                 decoration: InputDecoration(
-                  hintText: "Enter a new leaguess Name"
+                  hintText: "Enter a new league Name"
                 ),
               ),
             ),
-            FlatButton(
-              color: Colors.blueAccent,
-              onPressed: (){
-                Firestore.instance.collection("leagues").document("leagues").updateData(
-                {
-                 "leagues" : FieldValue.arrayUnion( [
-                    _controller.text
-                  ] )
-                }
+            Builder(
+              builder: (context)=> FlatButton(
+                color: Colors.blueAccent,
+                onPressed: (){
+
+                  Firestore.instance.collection("leagues").document("leagues").updateData(
+                  {
+                   "leagues" : FieldValue.arrayUnion( [
+                      _controller.text
+                    ] )
+                  }
+                    ).then((_) {
+                      _controller.clear();
+                      showModalBottomSheet(
+                        context: (context),
+                         builder: (context) => ToastBar(message: "Sucessfully added league",    )
+                         );
+                    });
                   
-                  );
-              },
-               child: Text("Add league"),
-               ),
+                  
+                },
+                 child: Text("Add league"),
+                 ),
+            ),
             SizedBox( height: 15, ),
            
             StreamBuilder<DocumentSnapshot>(

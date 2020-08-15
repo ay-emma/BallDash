@@ -2,16 +2,58 @@
 // import 'package:goals_dash/Src/models/clubs.dart';
 // import 'package:goals_dash/Src/models/leagues.dart';
 
-// class Fixture {
-//   final League league;
-//   final DateTime when;
-//   final Club home;
-//   final Club away;
-//   final CollectionReference homeDetails;
-//   final CollectionReference awayDetails;
+class Fixture {
+  final String homeName;
+  final String awayName;
+  final String homeIcon;
+  final String awayIcon;
+  final int homeGoal;
+  final int awayGoal;
+  final String namesOfHomeScora;
+  final String namesOfAwayScora;
+  final int homePossession;
+  final int awayPossession;
+  final int homeTotalShorts;
+  final int awayTotalShorts;
+  final int homeShortsOnTarget;
+  final int awayShortsOnTaget;
+  final int homeCorners;
+  final int awayCorners;
+  final int homeFouls;
+  final int awayFouls;
+  final int homeYellowCards;
+  final int awayYellowCards;
+  final int homeRedCards;
+  final int awayRedCards;
+  final DateTime dateTimeToPlay;
+  final String youtubLink;
 
-  
-// }
+  Fixture(
+      {this.homeName,
+      this.awayName,
+      this.homeIcon,
+      this.awayIcon,
+      this.homeGoal,
+      this.awayGoal,
+      this.namesOfHomeScora,
+      this.namesOfAwayScora,
+      this.homePossession,
+      this.awayPossession,
+      this.homeTotalShorts,
+      this.awayTotalShorts,
+      this.homeShortsOnTarget,
+      this.awayShortsOnTaget,
+      this.homeCorners,
+      this.awayCorners,
+      this.homeFouls,
+      this.awayFouls,
+      this.homeYellowCards,
+      this.awayYellowCards,
+      this.homeRedCards,
+      this.awayRedCards,
+      this.dateTimeToPlay,
+      this.youtubLink});
+}
 
 // class SubCollection {
 //   final int goal;
@@ -25,20 +67,17 @@
 //   final int redCards;
 // }
 
-
-
 // <!-- The core Firebase JS SDK is always required and must be listed first -->
 //   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 
 //   <!-- TODO: Add SDKs for Firebase products that you want to use
 //        https://firebase.google.com/docs/web/setup#available-libraries -->
 //   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
-  
+
 //   <script src="https://www.gstatic.com/firebasejs/7.5.1/firebase-auth.js"></script>
 //   <script src="https://www.gstatic.com/firebasejs/7.5.1/firebase-firestore.js"></script>
 //   <script src="https://www.gstatic.com/firebasejs/7.5.1/firebase-storage.js"></script>
-  
-  
+
 //   <script>
 //     // Your web app's Firebase configuration
 //     var firebaseConfig = {
@@ -55,4 +94,3 @@
 //     firebase.initializeApp(firebaseConfig);
 //     firebase.analytics();
 //   </script>
-  

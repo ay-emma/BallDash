@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:goals_dash/Src/clubPage.dart';
 import 'package:provider/provider.dart';
 
+import 'fixtureUpdate.dart';
+import 'fixturesPage.dart';
 import 'leaguesPage.dart';
 import 'services/db.dart';
 
@@ -37,6 +39,26 @@ class _AdminPortalState extends State<AdminPortal> {
                 data.leagueList();
              }, child: Text(
                "Clubs"
+             ),
+             ),
+
+             FlatButton(
+               color: Colors.indigo,
+               onPressed: (){
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => FixturesPage() ));
+                 final  data = Provider.of<Db>(context, listen:false );
+                data.getClubsList();
+             }, child: Text(
+               "Fixtures"
+             ),
+             ),
+            FlatButton(
+               color: Colors.indigo,
+               onPressed: (){
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => FixtureUpdate() ));
+                 
+             }, child: Text(
+               "Update"
              ),
              ),
            ],

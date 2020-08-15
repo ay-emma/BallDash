@@ -1,20 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:goals_dash/Src/style.dart';
-import 'package:provider/provider.dart';
-
 import 'package:loading_indicator/loading_indicator.dart';
+import 'package:provider/provider.dart';
 
 import 'adminPortal.dart';
 import 'services/db.dart';
+import 'style.dart';
 import 'widgets/matchFixture.dart';
 
-class TodayMobile extends StatefulWidget {
+class TomorrowMobile extends StatefulWidget {
   @override
-  _TodayMobileState createState() => _TodayMobileState();
+  _TomorrowMobileState createState() => _TomorrowMobileState();
 }
 
-class _TodayMobileState extends State<TodayMobile> {
+class _TomorrowMobileState extends State<TomorrowMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,34 +28,22 @@ class _TodayMobileState extends State<TodayMobile> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  children: [
-                    Text(
-                      "UEFA",
-                      style: header3,
-
-                    ),
-                    FadeInImage.assetNetwork(
-                        placeholder: "images/football.png",
-                        image: "https://firebasestorage.googleapis.com/v0/b/scoreline-61b57.appspot.com/o/images%2Fpngkit_champions-png_3689593.png?alt=media&token=081fb844-1b7f-4aa6-b012-13d53a57685a",
-                          height: 25,
-                          width: 25,
-                         ),
-                  ],
+                Image.asset(
+                  "images/barclays-premier-league.png",
+                  width: 120,
                 ),
                 // SizedBox(
                 //   height: 15,
-                // ), 
-                // https://firebasestorage.googleapis.com/v0/b/scoreline-61b57.appspot.com/o/images%2FPngItem_1249076.png?alt=media&token=4a6c9083-91c0-44e5-8b26-f06c4fae1739
+                // ),
                 // for the  width of List of matche fixtures
                 Container(
                   width: MediaQuery.of(context).size.width * 0.95,
                   child: Consumer<Db>(builder: (context, db, child) {
                     return StreamBuilder<QuerySnapshot>(
-                      stream: db.fixturesToday(),
+                      stream: db.fixturesTomorrow(),
                       builder: (context, snapshot) {
                         if (!snapshot.hasData) {
-                          return  LoadingIndicator(
+                          return LoadingIndicator(
                             indicatorType: Indicator.ballRotate,
                             color: bluewe,
                             );
@@ -66,16 +53,15 @@ class _TodayMobileState extends State<TodayMobile> {
                             shrinkWrap: true,
                             children: snapshot.data.documents
                                 .map((DocumentSnapshot e) {
-                                  
                               Timestamp nig = e.data["dateTime"];
                               DateTime vig =
                                   DateTime.fromMicrosecondsSinceEpoch(
                                       nig.microsecondsSinceEpoch);
                               print(e.data["dateTime"]);
                               print(vig);
-                            
+                              
                                 return Padding(
-                                  padding: const EdgeInsets.only( bottom: 8  ),
+                                   padding: const EdgeInsets.only( bottom: 8  ),
                                   child: MatchFixture(
                                       homeName: e.data["homeName"],
                                       awayName: e.data["awayName"],
