@@ -34,7 +34,6 @@ class _TodayMobileState extends State<TodayMobile> {
                     Text(
                       "UEFA",
                       style: header3,
-
                     ),
                     FadeInImage.assetNetwork(
                         placeholder: "images/football.png",

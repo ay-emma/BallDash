@@ -68,10 +68,50 @@ class Db with ChangeNotifier {
     return  getResult();
   }
 
-   addFixtures(
+   Future addFixtures(
     {
       String homeName,
       String awayName,
+      DateTime dateTime,
+
+    }
+  ) async {
+    //we need to improve this to allow multiple user to add data.
+    // we need to add the ability to add the right Icons url
+    // instead of pics
+    await fire.collection("fixtures").add(
+      {
+        "homeName" : homeName,
+        "awayName" : awayName,
+        "homeIcon" : "pics",
+        "awayIcon" : "pics",
+        "homeGoals" : 0,
+        "awayGoals" : 0,
+        "homeScora" : "",
+        "awayScora" : "",
+        "homePossession": 0,
+        "awayPossession": 0,
+        "homeTotalShorts": 0,
+        "awayTotalShorts" : 0,
+        "homeShortsOnTarget": 0,
+        "awayShortsOnTarget": 0,
+        "homeCorners": 0,
+        "awayCorners": 0,
+        "homeFouls":0,
+        "awayFouls": 0,
+        "homeYellowCards":0,
+        "awayYellowCards":0,
+        "homeRedCards" : 0,
+        "awayRedCards":0,
+        "youtubeLink": "youtubeLink",
+        "dateTime": dateTime,
+    });
+  }
+
+  
+ Future udateFixtures(
+    {
+      String id,
       String homeIcon,
       String awayIcon,
       int homeGoals,
@@ -94,16 +134,14 @@ class Db with ChangeNotifier {
       int awayRedCards,
       String youtubeLink,
       DateTime dateTime,
-      
+
     }
   ) async {
     //we need to improve this to allow multiple user to add data.
-    await fire.collection("fixtures").add(
+    await fire.collection("fixtures").document(id).updateData(
       {
-        "homeName" : homeName,
-        "awayName" : awayName,
-        "homeIcon" : homeIcon,
-        "awayIcon" : awayIcon,
+        
+        
         "homeGoals" : homeGoals,
         "awayGoals" : awayGoals,
         "homeScora" : homeScora,
@@ -119,14 +157,15 @@ class Db with ChangeNotifier {
         "homeFouls":homeFouls,
         "awayFouls": awayFouls,
         "homeYellowCards":homeYellowCards,
-        "awayYellowCards":homeYellowCards,
+        "awayYellowCards":awayYellowCards,
         "homeRedCards" : homeRedCards,
         "awayRedCards":awayRedCards,
         "youtubeLink": youtubeLink,
-        "dateTime": dateTime,
+       
     });
   }
 
+  
 
 
 Stream<QuerySnapshot> fixturesYerstarday() {
