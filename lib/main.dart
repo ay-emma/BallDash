@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           
         ],
         child: MaterialApp(
-        title: 'Ay codino',
+        title: 'Aycodino',
         theme: ThemeData(
           fontFamily: "Montserrat",
           primarySwatch: Colors.blue,

@@ -29,7 +29,7 @@ class _YerstadayMobileState extends State<YerstadayMobile> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  "images/barclays-premier-league.png",
+                  "assets/images/barclays-premier-league.png",
                   width: 120,
                 ),
                 // SizedBox(
@@ -46,7 +46,7 @@ class _YerstadayMobileState extends State<YerstadayMobile> {
                           return LoadingIndicator(
                             indicatorType: Indicator.ballRotate,
                             color: bluewe,
-                            );
+                          );
                         }
                         return ListView(
                             primary: false,
@@ -59,38 +59,38 @@ class _YerstadayMobileState extends State<YerstadayMobile> {
                                       nig.microsecondsSinceEpoch);
                               print(e.data["dateTime"]);
                               print(vig);
-                              
-                                return Padding(
-                                  padding: const EdgeInsets.only( bottom: 8  ),
-                                  child: MatchFixture(
-                                      homeName: e.data["homeName"],
-                                      awayName: e.data["awayName"],
-                                      homeIcon:e.data["homeIcon"],
-                                      awayIcon: e.data["awayIcon"],
-                                      homeGoal: e.data["homeGoals"],
-                                      awayGoal: e.data["awayGoals"],
-                                      namesOfHomeScora: e.data["homeScora"],
-                                      namesOfAwayScora: e.data["awayScora"],
-                                      homePossession: e.data["homePossession"],
-                                      awayPossession: e.data["awayPossession"],
-                                      homeTotalShorts: e.data["homeTotalShorts"],
-                                      awayTotalShorts: e.data["awayTotalShorts"],
-                                      homeShortsOnTarget: e.data["homeShortsOnTarget"],
-                                      awayShortsOnTaget: e.data["awayShortsOnTarget"],
-                                      homeCorners: e.data["homeCorners"],
-                                      awayCorners: e.data["awayCorners"],
-                                      homeFouls: e.data["homeFouls"],
-                                      awayFouls: e.data["awayFouls"],
-                                      homeYellowCards: e.data["homeYellowCards"],
-                                      awayYellowCards: e.data["awayYellowCards"],
-                                      homeRedCards: e.data["homeRedCards"],
-                                      awayRedCards: e.data["awayRedCards"],
-                                      dateTimeToPlay: vig,
-                                      youtubLink: e.data["youtubeLink"],
-                                     
-                                      ),
-                                );
-                              
+
+                              return Padding(
+                                padding: const EdgeInsets.only(bottom: 8),
+                                child: MatchFixture(
+                                  homeName: e.data["homeName"],
+                                  awayName: e.data["awayName"],
+                                  homeIcon: e.data["homeIcon"],
+                                  awayIcon: e.data["awayIcon"],
+                                  homeGoal: e.data["homeGoals"],
+                                  awayGoal: e.data["awayGoals"],
+                                  namesOfHomeScora: e.data["homeScora"],
+                                  namesOfAwayScora: e.data["awayScora"],
+                                  homePossession: e.data["homePossession"],
+                                  awayPossession: e.data["awayPossession"],
+                                  homeTotalShorts: e.data["homeTotalShorts"],
+                                  awayTotalShorts: e.data["awayTotalShorts"],
+                                  homeShortsOnTarget:
+                                      e.data["homeShortsOnTarget"],
+                                  awayShortsOnTaget:
+                                      e.data["awayShortsOnTarget"],
+                                  homeCorners: e.data["homeCorners"],
+                                  awayCorners: e.data["awayCorners"],
+                                  homeFouls: e.data["homeFouls"],
+                                  awayFouls: e.data["awayFouls"],
+                                  homeYellowCards: e.data["homeYellowCards"],
+                                  awayYellowCards: e.data["awayYellowCards"],
+                                  homeRedCards: e.data["homeRedCards"],
+                                  awayRedCards: e.data["awayRedCards"],
+                                  dateTimeToPlay: vig,
+                                  youtubLink: e.data["youtubeLink"],
+                                ),
+                              );
                             }).toList());
                       },
                     );

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "503144510955",
+    "firebase_url": "https://scoreline-61b57.firebaseio.com",
+    "project_id": "scoreline-61b57",
+    "storage_bucket": "scoreline-61b57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503144510955:android:b9270672ef1530a14295ae",
+        "android_client_info": {
+          "package_name": "com.example.goals_dash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503144510955-bi0mmggg3ui23noilhufoae8kavop7d6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.goals_dash",
+            "certificate_hash": "9316839ddda662ca301fc4fb1df8fdbef4921594"
+          }
+        },
+        {
+          "client_id": "503144510955-6qcgoifa9oeaqk8v65s5sg8nrq8tpn1l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-H6q04u-wt3GFHp_7RM27qshMUYPRhQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503144510955-6qcgoifa9oeaqk8v65s5sg8nrq8tpn1l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
