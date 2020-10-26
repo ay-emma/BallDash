@@ -254,12 +254,15 @@ class _MatchFixtureState extends State<MatchFixture> {
                         padding: const EdgeInsets.symmetric(vertical: 5),
                         child: FlatButton(
                             onPressed: () {
+                              print("my link" + widget.youtubLink);
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   // #######  this is were it was added
                                   builder: (context) => YoutubeVideo(
                                     youtubeLink: widget.youtubLink + "?t=2",
+                                    //  "https://youtu.be/X1b3C2081-Q" + "?t=2",
+                                    //lkd
                                     whosPlaying: widget.homeName +
                                         " vs " +
                                         widget.awayName,

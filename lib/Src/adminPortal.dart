@@ -19,6 +19,7 @@ class _AdminPortalState extends State<AdminPortal> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.blueAccent,
       child: Center(
         child: ButtonBar(
           alignment: MainAxisAlignment.center,

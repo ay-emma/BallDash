@@ -28,13 +28,9 @@ class _YerstadayMobileState extends State<YerstadayMobile> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(
-                  "assets/images/barclays-premier-league.png",
-                  width: 120,
+                SizedBox(
+                  height: 15,
                 ),
-                // SizedBox(
-                //   height: 15,
-                // ),
                 // for the  width of List of matche fixtures
                 Container(
                   width: MediaQuery.of(context).size.width * 0.95,
@@ -101,12 +97,12 @@ class _YerstadayMobileState extends State<YerstadayMobile> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => AdminPortal()));
-          }),
+      // floatingActionButton: FloatingActionButton(
+      //     child: Icon(Icons.add),
+      //     onPressed: () {
+      //       Navigator.push(context,
+      //           MaterialPageRoute(builder: (context) => AdminPortal()));
+      //     }),
     );
   }
 }

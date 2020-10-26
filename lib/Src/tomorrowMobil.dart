@@ -28,13 +28,13 @@ class _TomorrowMobileState extends State<TomorrowMobile> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(
-                  "assets/images/barclays-premier-league.png",
-                  width: 120,
-                ),
-                // SizedBox(
-                //   height: 15,
+                // Image.asset(
+                //   "assets/images/barclays-premier-league.png",
+                //   width: 120,
                 // ),
+                SizedBox(
+                  height: 15,
+                ),
                 // for the  width of List of matche fixtures
                 //jlk
                 Container(
@@ -102,12 +102,12 @@ class _TomorrowMobileState extends State<TomorrowMobile> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => AdminPortal()));
-          }),
+      // floatingActionButton: FloatingActionButton(
+      //     child: Icon(Icons.add),
+      //     onPressed: () {
+      //       Navigator.push(context,
+      //           MaterialPageRoute(builder: (context) => AdminPortal()));
+      //     }),
     );
   }
 }

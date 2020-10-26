@@ -29,21 +29,21 @@ class _TodayMobileState extends State<TodayMobile> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  children: [
-                    Text(
-                      "UEFA",
-                      style: header3,
-                    ),
-                    FadeInImage.assetNetwork(
-                      placeholder: "assets/images/football.png",
-                      image:
-                          "https://firebasestorage.googleapis.com/v0/b/scoreline-61b57.appspot.com/o/images%2Fpngkit_champions-png_3689593.png?alt=media&token=081fb844-1b7f-4aa6-b012-13d53a57685a",
-                      height: 25,
-                      width: 25,
-                    ),
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     Text(
+                //       "UEFA",
+                //       style: header3,
+                //     ),
+                //     FadeInImage.assetNetwork(
+                //       placeholder: "assets/images/football.png",
+                //       image:
+                //           "https://firebasestorage.googleapis.com/v0/b/scoreline-61b57.appspot.com/o/images%2Fpngkit_champions-png_3689593.png?alt=media&token=081fb844-1b7f-4aa6-b012-13d53a57685a",
+                //       height: 25,
+                //       width: 25,
+                //     ),
+                //   ],
+                // ),
                 // SizedBox(
                 //   height: 15,
                 // ),
@@ -114,12 +114,12 @@ class _TodayMobileState extends State<TodayMobile> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => AdminPortal()));
-          }),
+      // floatingActionButton: FloatingActionButton(
+      //     child: Icon(Icons.add),
+      //     onPressed: () {
+      //       Navigator.push(context,
+      //           MaterialPageRoute(builder: (context) => AdminPortal()));
+      //     }),
     );
   }
 }
