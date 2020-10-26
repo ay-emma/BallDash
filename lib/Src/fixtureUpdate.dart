@@ -25,48 +25,49 @@ class _FixtureUpdateState extends State<FixtureUpdate> {
                     height: 50, width: 50, child: CircularProgressIndicator());
               }
               return ListView(
-                children:  snapshot.data.documents.map((e){
+                children: snapshot.data.documents.map((e) {
                   return InkWell(
-                    onTap:(){
-                      Navigator.push(context, 
-                     MaterialPageRoute(builder: (context)=> UpdateFixture(
-                  docId: e.documentID,  
-                      
-                  homeGoal:e.data["homeGoals"].toString(),
-                  awayGoal: e.data["awayGoals"].toString(),
-                  namesOfHomeScora: e.data["homeScora"],
-                  namesOfAwayScora: e.data["awayScora"],
-                  homePossession : e.data["homePossession"].toString(),
-                  awayPossession : e.data["awayPossession"].toString(),
-                  homeTotalShorts : e.data["homeTotalShorts"].toString(),
-                  awayTotalShorts : e.data["awayTotalShorts"].toString(),
-                  homeShortsOnTarget : e.data["homeShortsOnTarget"].toString(),
-                  awayShortsOnTaget : e.data["awayShortsOnTarget"].toString(),
-                  homeCorners : e.data["homeCorners"].toString(),
-                  awayCorners : e.data["awayCorners"].toString(),
-                  homeFouls : e.data["homeFouls"].toString(),
-                  awayFouls : e.data["awayFouls"].toString(),
-                  homeYellowCards : e.data["homeYellowCards"].toString(),
-                  awayYellowCards : e.data["awayYellowCards"].toString(),
-                  homeRedCards : e.data["homeRedCards"].toString(),
-                  awayRedCards : e.data["awayRedCards"].toString(),
-                  youtubLink : e.data["youtubeLink"],
-
-                       ), 
-                       ),
-                       );
-                    }, 
-                       child: ListTile(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UpdateFixture(
+                            docId: e.documentID,
+                            homeGoal: e.data["homeGoals"].toString(),
+                            awayGoal: e.data["awayGoals"].toString(),
+                            namesOfHomeScora: e.data["homeScora"],
+                            namesOfAwayScora: e.data["awayScora"],
+                            homePossession: e.data["homePossession"].toString(),
+                            awayPossession: e.data["awayPossession"].toString(),
+                            homeTotalShorts:
+                                e.data["homeTotalShorts"].toString(),
+                            awayTotalShorts:
+                                e.data["awayTotalShorts"].toString(),
+                            homeShortsOnTarget:
+                                e.data["homeShortsOnTarget"].toString(),
+                            awayShortsOnTaget:
+                                e.data["awayShortsOnTarget"].toString(),
+                            homeCorners: e.data["homeCorners"].toString(),
+                            awayCorners: e.data["awayCorners"].toString(),
+                            homeFouls: e.data["homeFouls"].toString(),
+                            awayFouls: e.data["awayFouls"].toString(),
+                            homeYellowCards:
+                                e.data["homeYellowCards"].toString(),
+                            awayYellowCards:
+                                e.data["awayYellowCards"].toString(),
+                            homeRedCards: e.data["homeRedCards"].toString(),
+                            awayRedCards: e.data["awayRedCards"].toString(),
+                            youtubLink: e.data["youtubeLink"],
+                          ),
+                        ),
+                      );
+                    },
+                    child: ListTile(
                       title: Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            e.data["homeName"]
-                          ),
-                          Text(
-                            e.data["awayName"]
-                          ),
-                         
+                          Text(e.data["homeName"]),
+                          Text(e.data["awayName"]),
                         ],
                       ),
                       subtitle: Row(
@@ -78,13 +79,11 @@ class _FixtureUpdateState extends State<FixtureUpdate> {
                           Text(
                             e.data["awayGoals"].toString(),
                           ),
-                         
                         ],
                       ),
                     ),
                   );
                 }).toList(),
-
               );
             },
           );

@@ -18,145 +18,93 @@ class _TodayState extends State<Today> {
     return Scaffold(
       backgroundColor: bodybg,
       body: Scrollbar(
-              child: SingleChildScrollView(
-                child: Container(
+        child: SingleChildScrollView(
+          child: Container(
             width: double.infinity,
-            
             color: bodybg,
             child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text("LaLiga", style: header3),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  // for the  width of List of matche fixtures
-                  Container(
-                    width: MediaQuery.of(context).size.width <= 740 ? MediaQuery.of(context).size.width * 0.93 :MediaQuery.of(context).size.width * 0.8,
-                    child: ListView(
-            shrinkWrap: true,
-            children: [
-              //ToDo : decide func to show either date or scores
-              matchFixtures(
-                  homeName: "Chealse",
-                  awayName: "Arsenal",
-                  homeIcon: "images/football.png",
-                  awayIcon: "images/football.png",
-                  namesOfHomeScora: "messi(24') puga(82') macelo(9')",
-                  namesOfAwayScora: "messi(44') macelo(90')",
-                  homeGoal: 0,
-                  awayGoal: 2,
-                  homePossession: 56,
-                  awayPossession: 44,
-                  homeTotalShorts: 17,
-                  awayTotalShorts: 12,
-                  homeShortsOnTarget: 7,
-                  awayShortsOnTaget: 11,
-                  homeCorners: 1,
-                  awayCorners: 4,
-                  homeFouls: 2,
-                  awayFouls: 2,
-                  homeYellowCards: 1,
-                  awayYellowCards: 0,
-                  homeRedCards: 0,
-                  awayRedCards: 0,
-                  dateTimeToPlay: DateTime.utc(2020 ,7,22,22,30),),
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Text("LaLiga", style: header3),
+                SizedBox(
+                  height: 15,
+                ),
+                // for the  width of List of matche fixtures
+                Container(
+                  width: MediaQuery.of(context).size.width <= 740
+                      ? MediaQuery.of(context).size.width * 0.93
+                      : MediaQuery.of(context).size.width * 0.8,
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [
+                      //ToDo : decide func to show either date or scores
+                      matchFixtures(
+                        homeName: "Chealse",
+                        awayName: "Arsenal",
+                        homeIcon: "assets/images/football.png",
+                        awayIcon: "assets/images/football.png",
+                        namesOfHomeScora: "messi(24') puga(82') macelo(9')",
+                        namesOfAwayScora: "messi(44') macelo(90')",
+                        homeGoal: 0,
+                        awayGoal: 2,
+                        homePossession: 56,
+                        awayPossession: 44,
+                        homeTotalShorts: 17,
+                        awayTotalShorts: 12,
+                        homeShortsOnTarget: 7,
+                        awayShortsOnTaget: 11,
+                        homeCorners: 1,
+                        awayCorners: 4,
+                        homeFouls: 2,
+                        awayFouls: 2,
+                        homeYellowCards: 1,
+                        awayYellowCards: 0,
+                        homeRedCards: 0,
+                        awayRedCards: 0,
+                        dateTimeToPlay: DateTime.utc(2020, 7, 22, 22, 30),
+                      ),
 
-                  SizedBox(
-                    height: 15,
+                      SizedBox(
+                        height: 15,
+                      ),
+
+                      matchFixtures(
+                        homeName: "Chealse",
+                        awayName: "Arsenal",
+                        homeIcon: "assets/images/football.png",
+                        awayIcon: "assets/images/football.png",
+                        namesOfHomeScora: "messi(24') puga(82') macelo(9')",
+                        namesOfAwayScora: "messi(44') macelo(90')",
+                        homeGoal: 0,
+                        awayGoal: 2,
+                        homePossession: 56,
+                        awayPossession: 44,
+                        homeTotalShorts: 17,
+                        awayTotalShorts: 12,
+                        homeShortsOnTarget: 7,
+                        awayShortsOnTaget: 11,
+                        homeCorners: 1,
+                        awayCorners: 4,
+                        homeFouls: 2,
+                        awayFouls: 2,
+                        homeYellowCards: 1,
+                        awayYellowCards: 0,
+                        homeRedCards: 0,
+                        awayRedCards: 0,
+                        dateTimeToPlay: DateTime.utc(2020, 7, 22, 22, 30),
+                      ),
+
+                      SizedBox(
+                        height: 15,
+                      ),
+                    ],
                   ),
-                  
-              matchFixtures(
-                  homeName: "Chealse",
-                  awayName: "Arsenal",
-                  homeIcon: "images/football.png",
-                  awayIcon: "images/football.png",
-                  namesOfHomeScora: "messi(24') puga(82') macelo(9')",
-                  namesOfAwayScora: "messi(44') macelo(90')",
-                  homeGoal: 0,
-                  awayGoal: 2,
-                  homePossession: 56,
-                  awayPossession: 44,
-                  homeTotalShorts: 17,
-                  awayTotalShorts: 12,
-                  homeShortsOnTarget: 7,
-                  awayShortsOnTaget: 11,
-                  homeCorners: 1,
-                  awayCorners: 4,
-                  homeFouls: 2,
-                  awayFouls: 2,
-                  homeYellowCards: 1,
-                  awayYellowCards: 0,
-                  homeRedCards: 0,
-                  awayRedCards: 0,
-                  dateTimeToPlay: DateTime.utc(2020 ,7,22,22,30),),
-
-                  SizedBox(
-                    height: 15,
-                  ),
-
-             matchFixtures(
-                  homeName: "Manchester United",
-                  awayName: "Bercelonia",
-                  homeIcon: "images/football.png",
-                  awayIcon: "images/football.png",
-                  namesOfHomeScora: "messi(24') puga(82') macelo(9')",
-                  namesOfAwayScora: "messi(44') macelo(90')",
-                  homeGoal: 2,
-                  awayGoal: 2,
-                  homePossession: 51,
-                  awayPossession: 49,
-                  homeTotalShorts: 25,
-                  awayTotalShorts: 22,
-                  homeShortsOnTarget: 15,
-                  awayShortsOnTaget: 11,
-                  homeCorners: 3,
-                  awayCorners: 4,
-                  homeFouls: 2,
-                  awayFouls: 1,
-                  homeYellowCards: 1,
-                  awayYellowCards: 0,
-                  homeRedCards: 0,
-                  awayRedCards: 0,
-                  dateTimeToPlay: DateTime.utc(2020 ,7,22,22,30),),
-
-                  SizedBox(
-                    height: 15,
-                  ),
-
-             matchFixtures(
-                  homeName: "Liverpool",
-                  awayName: "Beryan Muniche",
-                  homeIcon: "images/football.png",
-                  awayIcon: "images/football.png",
-                  namesOfHomeScora: "messi(24') puga(82') macelo(9')",
-                  namesOfAwayScora: "messi(44') macelo(90')",
-                  homeGoal: 0,
-                  awayGoal: 1,
-                  homePossession: 56,
-                  awayPossession: 44,
-                  homeTotalShorts: 17,
-                  awayTotalShorts: 12,
-                  homeShortsOnTarget: 7,
-                  awayShortsOnTaget: 11,
-                  homeCorners: 1,
-                  awayCorners: 4,
-                  homeFouls: 2,
-                  awayFouls: 2,
-                  homeYellowCards: 1,
-                  awayYellowCards: 0,
-                  homeRedCards: 0,
-                  awayRedCards: 0,
-                  dateTimeToPlay: DateTime.utc(2020 ,7,24,22,30),),
-
-            ],
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -189,59 +137,53 @@ class _TodayState extends State<Today> {
     @required int awayRedCards,
     @required DateTime dateTimeToPlay,
   }) {
-    List<Widget> goalsScoraHome (){
-        List<String> names = namesOfHomeScora.split(" ");
-        List<Widget> namesWid = [];
-      for(var i in names ){
+    List<Widget> goalsScoraHome() {
+      List<String> names = namesOfHomeScora.split(" ");
+      List<Widget> namesWid = [];
+      for (var i in names) {
         namesWid.add(
-          Container( 
-            padding: const EdgeInsets.symmetric(horizontal: 4 ),
-            margin: const EdgeInsets.only( top: 2, right: 3, left: 3 ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            margin: const EdgeInsets.only(top: 2, right: 3, left: 3),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3),
               border: Border.all(
                 color: Colors.blueGrey,
-                ),
-            ),
-            child: Text(i,
-             textAlign: TextAlign.center,
-             style: chips  ),
               ),
-              );
-      }
-      return namesWid;
-    }
-    // chips
-    List<Widget> goalsScoraAway (){
-         List<String> names = namesOfAwayScora.split(" ");
-        List<Widget> namesWid = [];
-      for(var i in names ){
-        namesWid.add(
-          Container( 
-            padding: const EdgeInsets.symmetric(horizontal: 4 ),
-            margin: const EdgeInsets.only( top: 2, right: 3, left: 3 ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(3),
-              border: Border.all(
-                color: Colors.blueGrey,
-                )
             ),
-            child: Text(i,
-             textAlign: TextAlign.center,
-             style: chips  ),
-              ),
-              );
+            child: Text(i, textAlign: TextAlign.center, style: chips),
+          ),
+        );
       }
       return namesWid;
     }
 
-    return LayoutBuilder(
-        builder: (context, constraint){
-          return  Column(
-            children: [
-              
-              Container(
-        decoration: BoxDecoration(
+    // chips
+    List<Widget> goalsScoraAway() {
+      List<String> names = namesOfAwayScora.split(" ");
+      List<Widget> namesWid = [];
+      for (var i in names) {
+        namesWid.add(
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            margin: const EdgeInsets.only(top: 2, right: 3, left: 3),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(3),
+                border: Border.all(
+                  color: Colors.blueGrey,
+                )),
+            child: Text(i, textAlign: TextAlign.center, style: chips),
+          ),
+        );
+      }
+      return namesWid;
+    }
+
+    return LayoutBuilder(builder: (context, constraint) {
+      return Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
                 color: cardbg,
                 borderRadius: BorderRadius.circular(15),
                 border: Border.all(
@@ -257,21 +199,20 @@ class _TodayState extends State<Today> {
                     offset: Offset(0, 2),
                   ),
                 ]),
-        alignment: Alignment.center,
-        
-        child: ExpansionTiles(
+            alignment: Alignment.center,
+            child: ExpansionTiles(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    // <=== Home ===>
-                    width: MediaQuery.of(context).size.width * homeAwaycontainerwidth(constraint),
-                    child: Text(homeName,
-                        textAlign: TextAlign.right,
-                        softWrap: false,
-                        overflow: TextOverflow.ellipsis,
-                        style: header4)
-                  ),
+                      // <=== Home ===>
+                      width: MediaQuery.of(context).size.width *
+                          homeAwaycontainerwidth(constraint),
+                      child: Text(homeName,
+                          textAlign: TextAlign.right,
+                          softWrap: false,
+                          overflow: TextOverflow.ellipsis,
+                          style: header4)),
                   Image.asset(
                     homeIcon,
                     //"images/football.png",
@@ -290,7 +231,8 @@ class _TodayState extends State<Today> {
                     width: 40,
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * homeAwaycontainerwidth(constraint),
+                    width: MediaQuery.of(context).size.width *
+                        homeAwaycontainerwidth(constraint),
                     child: Text(
                       awayName,
                       softWrap: false,
@@ -309,10 +251,9 @@ class _TodayState extends State<Today> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only( left: 20),
+                        padding: const EdgeInsets.only(left: 20),
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.22,
-                         
                           height: 48,
                           child: Wrap(
                             children: goalsScoraHome(),
@@ -320,11 +261,9 @@ class _TodayState extends State<Today> {
                         ),
                       ),
                       Padding(
-                       padding: const EdgeInsets.only( right: 20),
+                        padding: const EdgeInsets.only(right: 20),
                         child: Container(
-                        
                           width: MediaQuery.of(context).size.width * 0.22,
-                        
                           height: 48,
                           child: Wrap(
                             children: goalsScoraAway(),
@@ -356,7 +295,9 @@ class _TodayState extends State<Today> {
                           awayPnt: awayCorners,
                           pntName: "Corners"),
                       pointsRow(
-                          homePnt: homeFouls, awayPnt: awayFouls, pntName: "Fouls"),
+                          homePnt: homeFouls,
+                          awayPnt: awayFouls,
+                          pntName: "Fouls"),
                       pointsRow(
                           homePnt: homeYellowCards,
                           awayPnt: awayYellowCards,
@@ -369,13 +310,11 @@ class _TodayState extends State<Today> {
                   ),
                 )
               ],
-        ),
-      ),
-            ],
-          );
-        }
-        
-    );
+            ),
+          ),
+        ],
+      );
+    });
   }
 
   Widget pointsRow({int homePnt, int awayPnt, String pntName}) {
@@ -402,7 +341,6 @@ class _TodayState extends State<Today> {
       children: [
         Container(
           width: 20,
-        
           child: Text(
             "$homePnt",
             style: rating,
@@ -471,7 +409,6 @@ class _TodayState extends State<Today> {
         ),
         Container(
           width: 20,
-        
           child: Text(
             "$awayPnt",
             style: rating,

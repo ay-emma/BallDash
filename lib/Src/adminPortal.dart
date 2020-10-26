@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'fixtureUpdate.dart';
 import 'fixturesPage.dart';
 import 'leaguesPage.dart';
+import 'playYoutube.dart';
 import 'services/db.dart';
 
 class AdminPortal extends StatefulWidget {
@@ -18,69 +19,69 @@ class _AdminPortalState extends State<AdminPortal> {
   @override
   Widget build(BuildContext context) {
     return Container(
-       child: Center(
-         child: ButtonBar(
-         alignment: MainAxisAlignment.center,
-           children: [
-             FlatButton(
-               color: Colors.indigo,
-               onPressed: (){
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => LeaguesPage() ));
-             }, child: Text(
-               "Leagues"
-             ),
-             ),
-
-             FlatButton(
-               color: Colors.indigo,
-               onPressed: (){
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => ClubsPage() ));
-                final  data = Provider.of<Db>(context, listen:false );
-                data.leagueList();
-             }, child: Text(
-               "Clubs"
-             ),
-             ),
-
-             FlatButton(
-               color: Colors.indigo,
-               onPressed: (){
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => FixturesPage() ));
-                 final  data = Provider.of<Db>(context, listen:false );
-                data.getClubsList();
-             }, child: Text(
-               "Fixtures"
-             ),
-             ),
+      color: Colors.blueAccent,
+      child: Center(
+        child: ButtonBar(
+          alignment: MainAxisAlignment.center,
+          children: [
             FlatButton(
-               color: Colors.indigo,
-               onPressed: (){
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => FixtureUpdate() ));
-                 
-             }, child: Text(
-               "Update"
-             ),
-             ),
-           ],
-          
-         ),
-       ),
+              color: Colors.indigo,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LeaguesPage()));
+              },
+              child: Text("Leagues"),
+            ),
+            FlatButton(
+              color: Colors.indigo,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ClubsPage()));
+                final data = Provider.of<Db>(context, listen: false);
+                data.leagueList();
+              },
+              child: Text("Clubs"),
+            ),
+            FlatButton(
+              color: Colors.indigo,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FixturesPage()));
+                final data = Provider.of<Db>(context, listen: false);
+                data.getClubsList();
+              },
+              child: Text("Fixtures"),
+            ),
+            FlatButton(
+              color: Colors.indigo,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FixtureUpdate()));
+              },
+              child: Text("Updates"),
+            ),
+            FlatButton(
+              color: Colors.indigo,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => YoutubeVideo(
+                      youtubeLink: "https://youtu.be/X1b3C2081-Q" + "?t=2",
+                      whosPlaying: "baca vs bayarn",
+                      // https://youtu.be/X1b3C2081-Q
+                    ),
+                  ),
+                );
+              },
+              child: Text("Youtube "),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // <!-- The core Firebase JS SDK is always required and must be listed first -->
 // <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
@@ -92,7 +93,6 @@ class _AdminPortalState extends State<AdminPortal> {
 // <script src="https://www.gstatic.com/firebasejs/7.5.1/firebase-auth.js"></script>
 // <script src="https://www.gstatic.com/firebasejs/7.5.1/firebase-firestore.js"></script>
 // <script src="https://www.gstatic.com/firebasejs/7.5.1/firebase-storage.js"></script>
-
 
 // <script>
 //   // Your web app's Firebase configuration
