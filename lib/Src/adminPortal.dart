@@ -63,13 +63,15 @@ class _AdminPortalState extends State<AdminPortal> {
               color: Colors.indigo,
               onPressed: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => YoutubeVideo(
-                              youtubeLink:
-                                  "https://youtu.be/ysGfsOFwSCg" + "?t=2",
-                              whosPlaying: "baca vs bayarn",
-                            )));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => YoutubeVideo(
+                      youtubeLink: "https://youtu.be/X1b3C2081-Q" + "?t=2",
+                      whosPlaying: "baca vs bayarn",
+                      // https://youtu.be/X1b3C2081-Q
+                    ),
+                  ),
+                );
               },
               child: Text("Youtube "),
             ),

@@ -257,6 +257,7 @@ class _MatchFixtureState extends State<MatchFixture> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
+                                  // #######  this is were it was added
                                   builder: (context) => YoutubeVideo(
                                     youtubeLink: widget.youtubLink + "?t=2",
                                     whosPlaying: widget.homeName +
@@ -276,7 +277,7 @@ class _MatchFixtureState extends State<MatchFixture> {
                                   width: 10,
                                 ),
                                 Text(
-                                  "youtube Vedio",
+                                  "youtube Video",
                                   style: TextStyle(color: Colors.red),
                                 ),
                               ],
