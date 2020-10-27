@@ -56,9 +56,12 @@ class _TodayMobileState extends State<TodayMobile> {
                       stream: db.fixturesToday(),
                       builder: (context, snapshot) {
                         if (!snapshot.hasData) {
-                          return LoadingIndicator(
-                            indicatorType: Indicator.ballRotate,
-                            color: bluewe,
+                          return Container(
+                            height: MediaQuery.of(context).size.height * 0.8,
+                            child: LoadingIndicator(
+                              indicatorType: Indicator.ballRotate,
+                              color: bluewe,
+                            ),
                           );
                         }
                         return ListView(

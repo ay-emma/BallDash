@@ -280,16 +280,16 @@ class _MatchFixtureState extends State<MatchFixture> {
                                   width: 10,
                                 ),
                                 Text(
-                                  "youtube Video",
+                                  "watch youtube highlights",
                                   style: TextStyle(color: Colors.red),
                                 ),
                               ],
-                            )),
-                      )
+                            ),),
+                      ),
                     ],
                   ),
                 )
-              ]),
+              ],),
         ),
       ],
     );

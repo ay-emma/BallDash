@@ -26,9 +26,9 @@ class _NavBarState extends State<NavBar> {
             body: LayoutBuilder(builder: (context, constin) {
               if (constin.maxWidth >= 480) {
                 return TabBarView(children: [
-                  Icon(Icons.account_box, size: 60),
-                  Today(),
-                  TomorrowMobile()
+                  YerstadayMobile(),
+                  TodayMobile(),
+                  TomorrowMobile(),
                 ]);
               } else {
                 print("phone mode");

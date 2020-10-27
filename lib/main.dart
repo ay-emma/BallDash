@@ -13,20 +13,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider<Db>(create: (_) => Db() ),
-          
-        ],
-        child: MaterialApp(
-        title: 'Aycodino',
-        theme: ThemeData(
-          fontFamily: "Montserrat",
-          primarySwatch: Colors.blue,
-          
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        home: HomePage()
-      ),
+      providers: [
+        ChangeNotifierProvider<Db>(create: (_) => Db()),
+      ],
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Aycodino',
+          theme: ThemeData(
+            fontFamily: "Montserrat",
+            primarySwatch: Colors.blue,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+          home: HomePage()),
     );
   }
 }
