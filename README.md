@@ -1,6 +1,6 @@
-# goals_dash
+# goals_dash renamed to Scoreline
 
-A new Flutter project.
+### Scoreline is an app built with flutter to work on android and the web as a PWA. The app aims to get Heighlights of football matchs 
 
 ## Getting Started
 
