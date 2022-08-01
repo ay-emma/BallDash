@@ -1,6 +1,6 @@
-# goals_dash renamed to Scoreline
+# BallDash renamed to Scoreline
 
-### Scoreline is an app built with flutter to work on android and the web as a PWA. The app aims to get Heighlights of football matchs 
+### BallDash is an app built with flutter to work on android and the web as a PWA. The app aims to get Heighlights of football matchs 
 
 ## - [Click here to view a Progress web app ](https://scoreline-61b57.web.app)
 
